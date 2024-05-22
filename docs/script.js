@@ -2,7 +2,11 @@
 
 
 let createDivs = () => {
-    const number = parseInt(prompt("Type the number of squares per side (e.g., 16 for a 16x16 grid)"));
+    let number = parseInt(prompt("Type the number of squares per side from 1 to 100 (e.g., 16 for a 16x16 grid)"));
+    while (number < 1 || number > 100) {
+        number = parseInt(prompt("Please type in the number ranging from 1 to 100."))
+    }
+    
     const container = document.querySelector(".container");
 
     const totalNumber = number * number;
