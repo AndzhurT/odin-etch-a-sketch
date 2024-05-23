@@ -1,5 +1,4 @@
 
-
 let assignHover = () => {
     // assign hover effect over added divs
     const divs = document.querySelectorAll(".section");
@@ -28,7 +27,7 @@ let getNumberOfDivs = () => {
     return number;
 }
 
-let createDivs = () => {
+let createDivs = (number = null) => {
     let container = document.querySelector(".container");
 
     // remove divs if they are already added to the container
@@ -36,13 +35,16 @@ let createDivs = () => {
         let confirmation = confirm("Are you sure you want to create new divs? This will remove already existing ones ");
         if (confirmation) {
             container.textContent = "";
+            addedDivs = false;
         }
         else {
             return;
         }
     }
 
-    let number = getNumberOfDivs();
+    if (number == null) {
+        number = getNumberOfDivs();
+    }
 
     const totalNumber = number * number;
     const divWidthPercentage = 100 / number;
@@ -57,9 +59,10 @@ let createDivs = () => {
         div.style.height = divWidthPercentage + "%";
 
         container.appendChild(div);
-        
-        addedDivs = true;
-        }
+    }
+
+                
+    addedDivs = true;
         
     // Assign hover effect over added divs
     container.addEventListener("mouseover", setColor);
@@ -82,3 +85,4 @@ btnResetDivs.addEventListener("click", resetDivs);
 
 let mainContainer = document.querySelector(".container");
 mainContainer.addEventListener("click", assignHover);
+
