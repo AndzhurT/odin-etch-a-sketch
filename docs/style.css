@@ -9,12 +9,24 @@ html, body {
     width: 100%;
 }
 
+/* Header */
 .header {
     width: 100%;
     background-color: white;
-    z-index: 1;
+    display: flex;
+    justify-content: space-around;
+    font-family: Roboto;
 }
 
+.header .logo {
+    font-size: 24px;   
+}
+
+.header .logo span {
+    color: green;
+}
+
+/* Main Body */
 .container {
     display: flex;
     flex-wrap: wrap;
