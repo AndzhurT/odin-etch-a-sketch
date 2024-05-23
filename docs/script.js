@@ -9,11 +9,13 @@ let assignHover = () => {
 
 let setColor = (e) => {
     let target = e.target;
+    let color = document.querySelector("#color").value; // get selected color value
+
     if (e.buttons == 1 || e.buttons == 3) {
-        target.classList.add("colored");
+        target.style.backgroundColor = color;
     }
     else if (e.buttons == 2) {
-        target.classList.remove("colored");
+        target.style.backgroundColor = "";
     }
 }
 
@@ -28,7 +30,7 @@ let getNumberOfDivs = () => {
 
 let createDivs = () => {
     let container = document.querySelector(".container");
-    
+
     // remove divs if they are already added to the container
     if (addedDivs == true) {
         let confirmation = confirm("Are you sure you want to create new divs? This will remove already existing ones ");
@@ -58,14 +60,15 @@ let createDivs = () => {
         
         addedDivs = true;
         }
-    
+        
     // Assign hover effect over added divs
     container.addEventListener("mouseover", setColor);
 }
 
 let resetDivs = () => {
     const divs = document.querySelectorAll(".section");
-    divs.forEach(div => div.classList.remove("colored"));
+    divs.forEach(div => {div.style.backgroundColor = "";
+                         }); 
 }
 
 
@@ -79,4 +82,3 @@ btnResetDivs.addEventListener("click", resetDivs);
 
 let mainContainer = document.querySelector(".container");
 mainContainer.addEventListener("click", assignHover);
-
