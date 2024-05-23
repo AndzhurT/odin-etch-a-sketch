@@ -27,7 +27,7 @@ let getNumberOfDivs = () => {
     return number;
 }
 
-let createDivs = (number = null) => {
+let createDivs = () => {
     let container = document.querySelector(".container");
 
     // remove divs if they are already added to the container
@@ -42,9 +42,7 @@ let createDivs = (number = null) => {
         }
     }
 
-    if (number == null) {
-        number = getNumberOfDivs();
-    }
+    let number = getNumberOfDivs();
 
     const totalNumber = number * number;
     const divWidthPercentage = 100 / number;
