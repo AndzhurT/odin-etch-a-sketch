@@ -15,15 +15,22 @@ html, body {
     background-color: white;
     display: flex;
     justify-content: space-around;
+    align-items: center;
     font-family: Roboto;
+    background-color: rgb(212, 212, 212);
+
 }
 
 .header .logo {
-    font-size: 24px;   
+    font-size: 28px;   
 }
 
 .header .logo span {
     color: green;
+}
+
+.header .buttons button {
+    padding: 12px;
 }
 
 /* Main Body */
