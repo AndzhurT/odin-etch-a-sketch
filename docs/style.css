@@ -12,13 +12,13 @@ html, body {
 /* Header */
 .header {
     width: 100%;
+    height: 45px;
     background-color: white;
     display: flex;
     justify-content: space-around;
     align-items: center;
     font-family: Roboto;
     background-color: rgb(212, 212, 212);
-
 }
 
 .header .logo {
@@ -29,9 +29,28 @@ html, body {
     color: green;
 }
 
-.header .buttons button {
-    padding: 12px;
+.header .buttons {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    
 }
+.header #color {
+    width: 75px;
+    height: 35px;
+    border-radius: 4px;
+}
+
+.header .buttons button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+    height: 35px;
+    border: 1px solid;
+    border-radius: 4px;
+}
+
 
 /* Main Body */
 .container {
